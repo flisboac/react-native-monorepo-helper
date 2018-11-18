@@ -1,10 +1,10 @@
 
-import path from 'path';
 import fs from 'fs';
-import resolve from 'resolve';
 import glob from 'glob';
+import path from 'path';
+import resolve from 'resolve';
 
-export interface Logger {
+export interface ILogger {
     debug: (...args: any[]) => any
     error: (...args: any[]) => any
 }
@@ -16,14 +16,14 @@ export namespace Metro {
         SOURCE_FILE = 'sourceFile'
     }
 
-    export type CustomResolver = (metro: ResolverConfig, moduleName: string, platform: string) => Resolution | null;
+    export type CustomResolver = (metro: IResolverConfig, moduleName: string, platform: string) => IResolution | null;
 
-    export interface Resolution {
+    export interface IResolution {
         type: ResolutionType;
         filePath: string;
     }
 
-    export interface Config {
+    export interface IConfig {
         watchFolders: string[];
         resolver: {
             resolveRequest?: CustomResolver;
@@ -33,7 +33,7 @@ export namespace Metro {
         getTransformModulePath?: () => any;
     }
 
-    export interface ResolverConfig {
+    export interface IResolverConfig {
         originModulePath: string;
         sourceExts: string[];
         assetExts?: string[];
@@ -41,32 +41,32 @@ export namespace Metro {
     }
 }
 
-export interface MonorepoInfo {
+export interface IMonorepoInfo {
     root: string;
     nodeModulesRoot: string;
     project: {
         root: string;
         nodeModulesRoot: string;
     };
-    packages: { root: string, nodeModulesRoot: string }[],
+    packages: Array<{ root: string, nodeModulesRoot: string }>,
 }
 
-interface ResolverContext {
-    metro: Metro.ResolverConfig;
+interface IResolverContext {
+    metro: Metro.IResolverConfig;
     moduleName: string;
     platform: string;
 }
 
-type MonorepoFinder = (projectRoot: string, helper: MetroConfigHelper) => MonorepoInfo | null
+type FMonorepoFinder = (projectRoot: string, helper: MetroConfigHelper) => IMonorepoInfo | null
 
-interface MetroConfigHelperOptions {
-    logger?: Logger,
-    defaultConfig?: Partial<Metro.Config>,
-    monorepoFinders?: MonorepoFinder[];
+interface IMetroConfigHelperOptions {
+    logger?: ILogger,
+    defaultConfig?: Partial<Metro.IConfig>,
+    monorepoFinders?: FMonorepoFinder[];
     projectRoot?: string
 }
 
-interface TypeScriptConfig {
+interface ITypeScriptConfig {
     transformerModuleName: string;
     fileExtensions: string[];
 }
@@ -85,7 +85,7 @@ function tryParseJsonFile<T extends object = any>(filename: string) {
 
 function readPackageGlobs(globs: any[], cwd: string) {
     let results: string[] = [];
-    for (let packageName of globs) {
+    for (const packageName of globs) {
         if (typeof packageName !== 'string') continue;
         results = results.concat(glob.sync(packageName, { cwd }));
     }
@@ -98,18 +98,18 @@ function unique(array: string[]) {
 
 class MetroConfigHelper {
 
-    private monorepoFinders_: MonorepoFinder[];
+    private monorepoFinders_: FMonorepoFinder[];
 
-    private logger_: Logger;
-    private defaultConfig_?: Partial<Metro.Config>;
-    private monorepo_?: MonorepoInfo;
+    private logger_: ILogger;
+    private defaultConfig_?: Partial<Metro.IConfig>;
+    private monorepo_?: IMonorepoInfo;
     private projectRoot_?: string;
     private watchFolders_: string[];
     private customResolver_?: Metro.CustomResolver;
-    private config_?: Metro.Config;
-    private typeScript_: false | TypeScriptConfig;
+    private config_?: Metro.IConfig;
+    private typeScript_: false | ITypeScriptConfig;
 
-    constructor(options?: MetroConfigHelperOptions) {
+    public constructor(options?: IMetroConfigHelperOptions) {
         options = options || {};
         this.logger_ = options.logger || console;
         this.defaultConfig_ = options.defaultConfig || {};
@@ -122,9 +122,9 @@ class MetroConfigHelper {
         this.monorepoFinder(...(options.monorepoFinders || []));
     }
 
-    projectRoot(): string;
-    projectRoot(newProjectRoot: string): this;
-    projectRoot(newProjectRoot?: string) {
+    public projectRoot(): string;
+    public projectRoot(newProjectRoot: string): this;
+    public projectRoot(newProjectRoot?: string) {
         if (newProjectRoot) {
             this.projectRoot_ = newProjectRoot;
             return this;
@@ -133,24 +133,24 @@ class MetroConfigHelper {
         return this.projectRoot_;
     }
 
-    monorepoFinder(...finder: MonorepoFinder[]) {
+    public monorepoFinder(...finder: FMonorepoFinder[]) {
         this.monorepoFinders_ = this.monorepoFinders_.concat(
             finder.filter(f => typeof f === 'function')
         );
         return this;
     }
 
-    findMonorepo() {
-        for (let monorepoFinder of this.monorepoFinders_) {
-            let monorepo = monorepoFinder(this.projectRoot(), this);
+    public findMonorepo() {
+        for (const monorepoFinder of this.monorepoFinders_) {
+            const monorepo = monorepoFinder(this.projectRoot(), this);
             if (monorepo) return monorepo;
         }
         return undefined;
     }
 
-    logger(): Logger;
-    logger(newLogger: Logger): this;
-    logger(newLogger?: Logger) {
+    public logger(): ILogger;
+    public logger(newLogger: ILogger): this;
+    public logger(newLogger?: ILogger) {
         if (newLogger) {
             this.logger_ = newLogger;
             return this;
@@ -159,9 +159,9 @@ class MetroConfigHelper {
         return this.logger_;
     }
 
-    defaultConfig(): Partial<Metro.Config>;
-    defaultConfig(newDefaultConfig: Partial<Metro.Config>): this;
-    defaultConfig(newDefaultConfig?: Partial<Metro.Config>) {
+    public defaultConfig(): Partial<Metro.IConfig>;
+    public defaultConfig(newDefaultConfig: Partial<Metro.IConfig>): this;
+    public defaultConfig(newDefaultConfig?: Partial<Metro.IConfig>) {
         if (newDefaultConfig) {
             this.defaultConfig_ = newDefaultConfig;
             return this;
@@ -170,9 +170,9 @@ class MetroConfigHelper {
         return this.defaultConfig_;
     }
 
-    monorepo(): MonorepoInfo;
-    monorepo(newMonorepoInfo: MonorepoInfo): this;
-    monorepo(newMonorepoInfo?: MonorepoInfo) {
+    public monorepo(): IMonorepoInfo;
+    public monorepo(newMonorepoInfo: IMonorepoInfo): this;
+    public monorepo(newMonorepoInfo?: IMonorepoInfo) {
         if (newMonorepoInfo) {
             this.monorepo_ = newMonorepoInfo;
             return this;
@@ -183,9 +183,9 @@ class MetroConfigHelper {
         return this.monorepo_;
     }
 
-    typeScript(): false | TypeScriptConfig;
-    typeScript(enabled: boolean | string | Partial<TypeScriptConfig>): this;
-    typeScript(enabled?: boolean | string | Partial<TypeScriptConfig>) {
+    public typeScript(): false | ITypeScriptConfig;
+    public typeScript(enabled: boolean | string | Partial<ITypeScriptConfig>): this;
+    public typeScript(enabled?: boolean | string | Partial<ITypeScriptConfig>) {
         if (enabled === true) {
             this.typeScript_ = defaultTypeScriptConfig;
             return this;
@@ -205,16 +205,16 @@ class MetroConfigHelper {
         return this.typeScript_;
     }
 
-    watchFolder(...folder: string[]) {
+    public watchFolder(...folder: string[]) {
         this.watchFolders_ = this.watchFolders_.concat(folder);
         return this;
     }
 
-    packageRoots() {
+    public packageRoots() {
         return this.monorepo().packages.map(packageInfo => packageInfo.root);
     }
 
-    watchFolders() {
+    public watchFolders() {
         return unique([
             this.monorepo().root,
             ...this.packageRoots(),
@@ -222,9 +222,9 @@ class MetroConfigHelper {
         ]);
     }
 
-    customResolver(): Metro.CustomResolver;
-    customResolver(newResolver: Metro.CustomResolver): this;
-    customResolver(newResolver?: Metro.CustomResolver) {
+    public customResolver(): Metro.CustomResolver;
+    public customResolver(newResolver: Metro.CustomResolver): this;
+    public customResolver(newResolver?: Metro.CustomResolver) {
         if (newResolver) {
             this.customResolver_ = newResolver;
             return this;
@@ -235,12 +235,12 @@ class MetroConfigHelper {
         return this.customResolver_;
     }
 
-    createCustomResolver(): Metro.CustomResolver {
+    public createCustomResolver(): Metro.CustomResolver {
         return (metro, moduleName, platform) => {
-            const context: ResolverContext = {
+            const context: IResolverContext = {
                 metro,
+                moduleName,
                 platform,
-                moduleName
             }
 
             const sourceExts = context.metro.sourceExts;
@@ -259,64 +259,9 @@ class MetroConfigHelper {
         }
     }
 
-    private resolveInProject(context: ResolverContext, projectRoot: string, type: Metro.ResolutionType, extensions: string[]) {
-        const originModulePath = context.metro.originModulePath;
-        const basedir = path.dirname(originModulePath);
-        const packageJson = path.resolve(projectRoot, 'package.json');
-        const moduleName = context.moduleName;
-        const paths = this.packageRoots();
-        extensions = this.generateComplementaryExtensions(context, extensions);
-
-        let resolvedName: string | undefined;
-
-        if (moduleName.startsWith('./') || moduleName.startsWith('../')) {
-            for (let extension of extensions) {
-                const pathname = `${path.resolve(basedir, moduleName)}.${extension}`;
-
-                if (fs.existsSync(pathname)) {
-                    let stat = fs.lstatSync(pathname);
-
-                    if (stat.isFile() || stat.isFIFO()) {
-                        resolvedName = pathname;
-                        break;
-                    }
-                }
-            }
-        }
-
-        if (!resolvedName) {
-            try {
-                resolvedName = resolve.sync(context.moduleName, {
-                    basedir,
-                    package: packageJson,
-                    extensions,
-                    paths,
-                });
-
-            } catch (error) {}
-        }
-
-        if (resolvedName) {
-            return { type, filePath: resolvedName };
-        }
-
-        return undefined;
-    }
-
-    private generateComplementaryExtensions(context: ResolverContext, baseExtensions: string[]) {
-        let filePaths: string[] = [];
-        for (let baseExt of baseExtensions) {
-            filePaths = filePaths.concat([
-                `${baseExt}`,
-                `${context.platform}.${baseExt}`,
-            ])
-        }
-        return filePaths;
-    }
-
-    config(): Metro.Config;
-    config(newConfig: Metro.Config): this;
-    config(newConfig?: Metro.Config) {
+    public config(): Metro.IConfig;
+    public config(newConfig: Metro.IConfig): this;
+    public config(newConfig?: Metro.IConfig) {
         if (newConfig) {
             this.config_ = newConfig;
             return this;
@@ -327,8 +272,8 @@ class MetroConfigHelper {
         return this.config_;
     }
 
-    generate() {
-        const config: Metro.Config = {
+    public generate() {
+        const config: Metro.IConfig = {
             ...this.defaultConfig(),
             watchFolders: [
                 ...(this.defaultConfig().watchFolders || []),
@@ -357,27 +302,82 @@ class MetroConfigHelper {
         return config;
     }
 
-    readonly mapByFolderFollowingSymlink = (path: string) => {
-        let stat = fs.existsSync(path) ? fs.statSync(path) : null;
+    private readonly mapByFolderFollowingSymlink = (pathname: string) => {
+        let stat = fs.existsSync(pathname) ? fs.statSync(pathname) : null;
         if (stat && stat.isSymbolicLink()) {
-            path = fs.realpathSync(path);
-            stat = fs.existsSync(path) ? fs.statSync(path) : null;
+            pathname = fs.realpathSync(pathname);
+            stat = fs.existsSync(pathname) ? fs.statSync(pathname) : null;
         }
-        if (stat && stat.isDirectory()) return path;
+        if (stat && stat.isDirectory()) return pathname;
         return '';
     }
 
-    readonly filterByNonEmptyString = (path: any) => {
-        return typeof path === 'string' && !!path;
+    private readonly filterByNonEmptyString = (pathname: any) => {
+        return typeof pathname === 'string' && !!pathname;
     }
 
-    private isTypeScriptConfig(value: any): value is TypeScriptConfig {
+    private resolveInProject(context: IResolverContext, projectRoot: string, type: Metro.ResolutionType, extensions: string[]) {
+        const originModulePath = context.metro.originModulePath;
+        const basedir = path.dirname(originModulePath);
+        const packageJson = path.resolve(projectRoot, 'package.json');
+        const moduleName = context.moduleName;
+        const paths = this.packageRoots();
+        extensions = this.generateComplementaryExtensions(context, extensions);
+
+        let resolvedName: string | undefined;
+
+        if (moduleName.startsWith('./') || moduleName.startsWith('../')) {
+            for (const extension of extensions) {
+                const pathname = `${path.resolve(basedir, moduleName)}.${extension}`;
+
+                if (fs.existsSync(pathname)) {
+                    const stat = fs.lstatSync(pathname);
+
+                    if (stat.isFile() || stat.isFIFO()) {
+                        resolvedName = pathname;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (!resolvedName) {
+            try {
+                resolvedName = resolve.sync(context.moduleName, {
+                    basedir,
+                    extensions,
+                    package: packageJson,
+                    paths,
+                });
+
+            } catch (error) {}
+        }
+
+        if (resolvedName) {
+            return { type, filePath: resolvedName };
+        }
+
+        return undefined;
+    }
+
+    private generateComplementaryExtensions(context: IResolverContext, baseExtensions: string[]) {
+        let filePaths: string[] = [];
+        for (const baseExt of baseExtensions) {
+            filePaths = filePaths.concat([
+                `${baseExt}`,
+                `${context.platform}.${baseExt}`,
+            ])
+        }
+        return filePaths;
+    }
+
+    private isTypeScriptConfig(value: any): value is ITypeScriptConfig {
         return typeof value === 'object' && value !== null;
     }
 }
 
 
-export function findLernaMonorepo(projectRoot: string, helper: MetroConfigHelper): MonorepoInfo | null {
+export function findLernaMonorepo(projectRoot: string, helper: MetroConfigHelper): IMonorepoInfo | null {
     let packageRoots: string[] = [];
 
     let found = false;
@@ -421,23 +421,23 @@ export function findLernaMonorepo(projectRoot: string, helper: MetroConfigHelper
     }
 
     const info = {
-        root: monorepoRoot,
         nodeModulesRoot: path.resolve(monorepoRoot, 'node_modules'),
         packages:
             packageRoots.map(root => ({
+                nodeModulesRoot: path.resolve(monorepoRoot, root, 'node_modules'),
                 root: path.resolve(monorepoRoot, root),
-                nodeModulesRoot: path.resolve(monorepoRoot, root, 'node_modules')
             })),
         project: {
+            nodeModulesRoot: path.resolve(projectRoot, 'node_modules'),
             root: projectRoot,
-            nodeModulesRoot: path.resolve(projectRoot, 'node_modules')
-        }
+        },
+        root: monorepoRoot,
     };
     helper.logger().debug(`Found lerna monorepo.`, info);
     return info;
 }
 
-export function findYarnMonorepo(projectRoot: string, helper: MetroConfigHelper): MonorepoInfo | null {
+export function findYarnMonorepo(projectRoot: string, helper: MetroConfigHelper): IMonorepoInfo | null {
     let packageRoots: string[] = [];
     let found = false;
     let monorepoRoot = projectRoot;
@@ -491,17 +491,17 @@ export const defaultHelperOptions = {
     monorepoFinders: [findLernaMonorepo, findYarnMonorepo]
 }
 
-export const nullLogger: Logger = {
+export const nullLogger: ILogger = {
     debug: () => {},
     error: () => {},
 }
 
-export const defaultTypeScriptConfig: TypeScriptConfig = {
+export const defaultTypeScriptConfig: ITypeScriptConfig = {
     fileExtensions: ["ts", "tsx"],
     transformerModuleName: "react-native-typescript-transformer"
 }
 
-export function metroConfigHelper(projectRoot: string, options?: MetroConfigHelperOptions) {
+export function metroConfigHelper(projectRoot: string, options?: IMetroConfigHelperOptions) {
     return new MetroConfigHelper(options || defaultHelperOptions)
         .projectRoot(projectRoot);
 }
