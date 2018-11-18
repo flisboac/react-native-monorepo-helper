@@ -1,10 +1,14 @@
 {
-  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "extends": ["tslint:latest"],
   "rules": {
     "no-namespace": false,
     "curly": false,
     "variable-name": [true, "allow-trailing-underscore", "ban-keywords"],
     "no-empty": false,
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "no-implicit-dependencies": [true, "dev"],
+    "quotemark": false,
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "no-consecutive-blank-lines": [true, 2]
   }
 }
