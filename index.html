@@ -85,7 +85,8 @@
 ├── node_modules/
 └── packages/
     ├── myproj-react-native-app/
-    ├── node_modules/
+    │   ├── node_modules/
+    │   │   └── react-native/
     │   ├── android/
     │   ├── ios/
     │   ├── index.js
@@ -115,6 +116,19 @@
         port: <span class="hljs-number">9091</span>
     })
     .generate();</code></pre>
+				<p>Especially for TypeScript, be sure to <code>nohoist</code> the
+				<code>react-native-typescript-transformer</code> package, i.e.:</p>
+				<pre><code class="language-json">/* In your package.json, if you use Yarn... */
+{
+  &quot;workspaces&quot;: {
+    &quot;nohoist&quot;: [
+      &quot;**/react-native&quot;,
+      &quot;**/react-native/**&quot;,
+      &quot;**/react-native-typescript-transformer&quot;
+    ]
+  },
+  /* ... */
+}</code></pre>
 				<h2 id="license">License</h2>
 				<p>MIT.</p>
 			</div>
