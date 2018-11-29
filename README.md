@@ -36,7 +36,8 @@ myproj/
 ├── node_modules/
 └── packages/
     ├── myproj-react-native-app/
-    ├── node_modules/
+    │   ├── node_modules/
+    │   │   └── react-native/
     │   ├── android/
     │   ├── ios/
     │   ├── index.js
