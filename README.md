@@ -78,6 +78,22 @@ module.exports = metroConfigHelper(projectRoot)
     .generate();
 ```
 
+Especially for TypeScript, be sure to `nohoist` the 
+`react-native-typescript-transformer` package, i.e.:
+
+```json
+/* In your package.json, if you use Yarn... */
+{
+  "workspaces": {
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**",
+      "**/react-native-typescript-transformer"
+    ]
+  },
+  /* ... */
+}
+```
 
 ## License
 
