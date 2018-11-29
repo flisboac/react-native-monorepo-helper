@@ -15,6 +15,9 @@ All notable changes to this project will be documented in this file. See [standa
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/flisboac/react-native-monorepo-helper/compare/v0.2.0...v0.2.1) (2018-11-29)
 
+### Security patches
+
+* remove transitive dependency on event-stream and flatmap-stream([e2426203470e100e8ecdf27697af66a18882d494](https://github.com/flisboac/react-native-monorepo-helper/commit/e2426203470e100e8ecdf27697af66a18882d494))
 
 
 <a name="0.2.0"></a>
