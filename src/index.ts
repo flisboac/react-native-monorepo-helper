@@ -90,12 +90,32 @@ function tryParseJsonFile<T extends object = any>(filename: string) {
     return undefined;
 }
 
-function readPackageGlobs(globs: any[], cwd: string) {
+function readPackageGlobs(
+    globs: any[],
+    options: {
+        cwd: string,
+        ignoredFolders?: string[],
+    },
+) {
+    const cwd = options.cwd;
+    const ignoredFolders = options.ignoredFolders || [`**/node_modules`];
     let results: string[] = [];
-    for (const packageName of globs) {
-        if (typeof packageName !== 'string') continue;
-        results = results.concat(glob.sync(packageName, { cwd }));
+
+    const globbedIgnoredFolders = ignoredFolders
+        .map(ignoredFolder => glob.sync(ignoredFolder, { cwd }))
+        .reduce((accum, elem) => { accum.push(...elem); return accum; }, [] as string[]);
+
+    for (const globStr of globs) {
+        if (typeof globStr !== 'string') continue;
+
+        const roots = glob
+            .sync(`${globStr}/package.json`, { cwd, nodir: true })
+            .map(root => path.dirname(root))
+            .filter(root => !globbedIgnoredFolders.some(folder => root.startsWith(folder)));
+
+        results = results.concat(roots);
     }
+
     return results;
 }
 
@@ -416,17 +436,17 @@ export function findLernaMonorepo(
                     const workspaces = packageJson.workspaces;
 
                     if (workspaces instanceof Array) {
-                        const paths = readPackageGlobs(workspaces, monorepoRoot);
+                        const paths = readPackageGlobs(workspaces, { cwd: monorepoRoot });
                         packageRoots = packageRoots.concat(paths);
 
                     } else if (typeof workspaces === 'object' && workspaces.packages instanceof Array) {
-                        const paths = readPackageGlobs(workspaces.packages, monorepoRoot);
+                        const paths = readPackageGlobs(workspaces.packages, { cwd: monorepoRoot });
                         packageRoots = packageRoots.concat(paths);
                     }
                 }
 
             } else if (lernaJson.packages instanceof Array) {
-                const paths = readPackageGlobs(lernaJson.packages, monorepoRoot);
+                const paths = readPackageGlobs(lernaJson.packages, { cwd: monorepoRoot });
                 packageRoots = packageRoots.concat(paths);
             }
         }
@@ -477,11 +497,11 @@ export function findYarnMonorepo(
             const workspaces = packageJson.workspaces;
 
             if (workspaces instanceof Array) {
-                const paths = readPackageGlobs(workspaces, monorepoRoot);
+                const paths = readPackageGlobs(workspaces, { cwd: monorepoRoot });
                 packageRoots = packageRoots.concat(paths);
 
             } else if (typeof workspaces === 'object' && workspaces.packages instanceof Array) {
-                const paths = readPackageGlobs(workspaces.packages, monorepoRoot);
+                const paths = readPackageGlobs(workspaces.packages, { cwd: monorepoRoot });
                 packageRoots = packageRoots.concat(paths);
             }
         }
