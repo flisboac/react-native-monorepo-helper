@@ -354,6 +354,14 @@ class MetroConfigHelper {
         const packageJson = path.resolve(projectRoot, 'package.json');
         const moduleName = context.moduleName;
         const paths = this.packageRoots();
+
+        const packageFilter = (pkg: any) => {
+            if (typeof pkg["react-native"] === 'string') {
+                pkg["main"] = pkg["react-native"];
+            }
+            return pkg;
+        };
+
         extensions = this.generateComplementaryExtensions(context, extensions);
 
         let resolvedName: string | undefined;
@@ -380,6 +388,20 @@ class MetroConfigHelper {
                     extensions,
                     package: packageJson,
                     paths,
+                    packageFilter,
+                });
+
+            } catch (error) {}
+        }
+
+        if (!resolvedName) {
+            try {
+                resolvedName = resolve.sync(context.moduleName, {
+                    basedir: projectRoot,
+                    extensions,
+                    package: packageJson,
+                    paths,
+                    packageFilter,
                 });
 
             } catch (error) {}
@@ -493,7 +515,6 @@ export function findYarnMonorepo(
         const packageJson = tryParseJsonFile(packageJsonFilename);
 
         if (packageJson) {
-            found = true;
             const workspaces = packageJson.workspaces;
 
             if (workspaces instanceof Array) {
@@ -503,6 +524,10 @@ export function findYarnMonorepo(
             } else if (typeof workspaces === 'object' && workspaces.packages instanceof Array) {
                 const paths = readPackageGlobs(workspaces.packages, { cwd: monorepoRoot });
                 packageRoots = packageRoots.concat(paths);
+            }
+
+            if (packageRoots && packageRoots.length > 0) {
+                found = true;
             }
         }
 
