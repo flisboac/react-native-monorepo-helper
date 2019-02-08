@@ -357,7 +357,7 @@ class MetroConfigHelper {
 
         const packageFilter = (pkg: any) => {
             if (typeof pkg["react-native"] === 'string') {
-                pkg["main"] = pkg["react-native"];
+                pkg.main = pkg["react-native"];
             }
             return pkg;
         };
