@@ -8,6 +8,7 @@
     "object-literal-sort-keys": false,
     "no-implicit-dependencies": [true, "dev"],
     "quotemark": false,
+    "prefer-conditional-expression": false,
     "arrow-parens": [true, "ban-single-arg-parens"],
     "no-consecutive-blank-lines": [true, 2]
   }

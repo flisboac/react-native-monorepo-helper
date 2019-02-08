@@ -2,10 +2,12 @@
 import fs from 'fs';
 import glob from 'glob';
 import path from 'path';
+import chalk from 'chalk';
 import resolve from 'resolve';
 
 export interface ILogger {
     debug: (...args: any[]) => any;
+    trace: (...args: any[]) => any;
     error: (...args: any[]) => any;
 }
 
@@ -345,15 +347,12 @@ class MetroConfigHelper {
 
     private resolveInProject(
         context: IResolverContext,
-        projectRoot: string,
+        _: string, // projectRoot
         type: Metro.ResolutionType,
         extensions: string[],
     ) {
         const originModulePath = context.metro.originModulePath;
-        const basedir = path.dirname(originModulePath);
-        const packageJson = path.resolve(projectRoot, 'package.json');
         const moduleName = context.moduleName;
-        const paths = this.packageRoots();
 
         const packageFilter = (pkg: any) => {
             if (typeof pkg["react-native"] === 'string') {
@@ -365,46 +364,68 @@ class MetroConfigHelper {
         extensions = this.generateComplementaryExtensions(context, extensions);
 
         let resolvedName: string | undefined;
+        let originModuleDir: string;
 
+        // Expectations:
+        // - originModulePath exists
+        // - originModulePath is an absolute (or completely
+        //   resolved, to some degree) path in the filesystem.
+        if (this.isDirectory(originModulePath)) {
+            originModuleDir = originModulePath;
+
+        } else {
+            originModuleDir = path.dirname(originModulePath);
+        }
+
+        // For some reason, `resolve` can't resolve relative-path modules...
+        // TODO Use resolve.sync() instead (if possible; if someone understands why/how)
         if (moduleName.startsWith('./') || moduleName.startsWith('../')) {
-            for (const extension of extensions) {
-                const pathname = `${path.resolve(basedir, moduleName)}.${extension}`;
+            let basename = path.resolve(originModuleDir, moduleName);
 
-                if (fs.existsSync(pathname)) {
-                    const stat = fs.lstatSync(pathname);
+            if (this.fileModuleExists(basename)) {
+                resolvedName = basename;
 
-                    if (stat.isFile() || stat.isFIFO()) {
+            } else if (this.isDirectory(basename)) {
+                basename = path.resolve(basename, 'index');
+            }
+
+            if (!resolvedName) {
+                for (const extension of extensions) {
+                    const pathname = `${basename}.${extension}`;
+
+                    if (this.fileModuleExists(pathname)) {
                         resolvedName = pathname;
                         break;
                     }
                 }
             }
+
+            if (!resolvedName) {
+                this.logger().trace(`Could not resolve local-path module '${moduleName}'!`
+                    + ` includedIn='${originModulePath}'`
+                    + `, basedir='${originModuleDir}'`
+                    + `, fileExtensions=${JSON.stringify(extensions)}!`);
+            }
         }
 
         if (!resolvedName) {
+            originModuleDir = this.projectRoot();
+
             try {
-                resolvedName = resolve.sync(context.moduleName, {
-                    basedir,
+                resolvedName = resolve.sync(moduleName, {
                     extensions,
-                    package: packageJson,
-                    paths,
                     packageFilter,
+                    basedir: originModuleDir,
                 });
 
             } catch (error) {}
-        }
 
-        if (!resolvedName) {
-            try {
-                resolvedName = resolve.sync(context.moduleName, {
-                    basedir: projectRoot,
-                    extensions,
-                    package: packageJson,
-                    paths,
-                    packageFilter,
-                });
-
-            } catch (error) {}
+            if (!resolvedName) {
+                this.logger().trace(`Could not resolve module '${moduleName}'!`
+                    + ` includedIn='${originModulePath}'`
+                    + `, basedir='${originModuleDir}'`
+                    + `, fileExtensions=${JSON.stringify(extensions)}!`);
+            }
         }
 
         if (resolvedName) {
@@ -412,6 +433,23 @@ class MetroConfigHelper {
         }
 
         return undefined;
+    }
+
+    private fileModuleExists(pathname: string) {
+        if (fs.existsSync(pathname)) {
+            const stat = fs.lstatSync(pathname);
+
+            if (stat.isFile() || stat.isFIFO()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private isDirectory(pathname: string) {
+        return fs.existsSync(pathname)
+            && fs.lstatSync(pathname).isDirectory();
     }
 
     private generateComplementaryExtensions(
@@ -558,14 +596,27 @@ export function findYarnMonorepo(
     return info;
 }
 
-export const defaultHelperOptions = {
-    logger: console,
-    monorepoFinders: [findLernaMonorepo, findYarnMonorepo],
-};
-
 export const nullLogger: ILogger = {
+    trace: () => {},
     debug: () => {},
     error: () => {},
+};
+
+/* tslint:disable no-console */
+export const consoleLogger: ILogger = {
+    trace: (...args: any[]) => console.debug(chalk.yellow("[MonorepoHelper|TRACE] "), ...args),
+    debug: (...args: any[]) => console.debug(chalk.yellowBright("[MonorepoHelper|DEBUG] "), ...args),
+    error: (...args: any[]) => console.error(chalk.bgRed.whiteBright("[MonorepoHelper|ERROR] "), ...args),
+};
+/* tslint:enable no-console */
+
+export const defaultHelperOptions = {
+    logger: {
+        trace: nullLogger.trace,
+        debug: consoleLogger.debug,
+        error: consoleLogger.error,
+    },
+    monorepoFinders: [findLernaMonorepo, findYarnMonorepo],
 };
 
 export const defaultTypeScriptConfig: ITypeScriptConfig = {
