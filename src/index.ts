@@ -1,10 +1,10 @@
 
+import chalk from 'chalk';
+import cp from 'child_process';
 import fs from 'fs';
 import glob from 'glob';
 import path from 'path';
-import chalk from 'chalk';
 import resolve from 'resolve';
-import cp from 'child_process';
 
 export interface ILogger {
     debug: (...args: any[]) => any;
