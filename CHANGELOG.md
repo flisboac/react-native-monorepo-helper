@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.4"></a>
+## [0.2.4](https://github.com/flisboac/react-native-monorepo-helper/compare/v0.2.3...v0.2.4) (2019-02-10)
+
+
+### Bug Fixes
+
+* import modules from relative folder path, improve logging ([#4](https://github.com/flisboac/react-native-monorepo-helper/issues/4)) ([dc0ddd6](https://github.com/flisboac/react-native-monorepo-helper/commit/dc0ddd6))
+
+
+### Features
+
+* improve yarn workspace search speed, remove redundant module resolution calls ([#4](https://github.com/flisboac/react-native-monorepo-helper/issues/4)) ([38dd06b](https://github.com/flisboac/react-native-monorepo-helper/commit/38dd06b))
+
+
+
 <a name="0.2.3"></a>
 ## [0.2.3](https://github.com/flisboac/react-native-monorepo-helper/compare/v0.2.2...v0.2.3) (2019-02-08)
 
