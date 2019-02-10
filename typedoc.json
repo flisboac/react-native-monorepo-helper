@@ -5,7 +5,7 @@
 	"flags": {},
 	"children": [
 		{
-			"id": 112,
+			"id": 118,
 			"name": "Metro",
 			"kind": 2,
 			"kindString": "Module",
@@ -14,7 +14,7 @@
 			},
 			"children": [
 				{
-					"id": 113,
+					"id": 119,
 					"name": "ResolutionType",
 					"kind": 4,
 					"kindString": "Enumeration",
@@ -23,7 +23,7 @@
 					},
 					"children": [
 						{
-							"id": 114,
+							"id": 120,
 							"name": "ASSET",
 							"kind": 16,
 							"kindString": "Enumeration member",
@@ -33,14 +33,14 @@
 							"sources": [
 								{
 									"fileName": "index.ts",
-									"line": 15,
+									"line": 18,
 									"character": 13
 								}
 							],
 							"defaultValue": "\"asset\""
 						},
 						{
-							"id": 115,
+							"id": 121,
 							"name": "SOURCE_FILE",
 							"kind": 16,
 							"kindString": "Enumeration member",
@@ -50,7 +50,7 @@
 							"sources": [
 								{
 									"fileName": "index.ts",
-									"line": 16,
+									"line": 19,
 									"character": 19
 								}
 							],
@@ -62,21 +62,21 @@
 							"title": "Enumeration members",
 							"kind": 16,
 							"children": [
-								114,
-								115
+								120,
+								121
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 14,
+							"line": 17,
 							"character": 30
 						}
 					]
 				},
 				{
-					"id": 119,
+					"id": 125,
 					"name": "IConfig",
 					"kind": 256,
 					"kindString": "Interface",
@@ -85,7 +85,7 @@
 					},
 					"children": [
 						{
-							"id": 129,
+							"id": 135,
 							"name": "getTransformModulePath",
 							"kind": 1024,
 							"kindString": "Property",
@@ -96,7 +96,7 @@
 							"sources": [
 								{
 									"fileName": "index.ts",
-									"line": 37,
+									"line": 40,
 									"character": 30
 								}
 							],
@@ -110,14 +110,14 @@
 									{
 										"type": "reflection",
 										"declaration": {
-											"id": 130,
+											"id": 136,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 131,
+													"id": 137,
 													"name": "__call",
 													"kind": 4096,
 													"kindString": "Call signature",
@@ -134,7 +134,7 @@
 							}
 						},
 						{
-							"id": 121,
+							"id": 127,
 							"name": "resolver",
 							"kind": 1024,
 							"kindString": "Property",
@@ -144,21 +144,21 @@
 							"sources": [
 								{
 									"fileName": "index.ts",
-									"line": 32,
+									"line": 35,
 									"character": 16
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 122,
+									"id": 128,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 124,
+											"id": 130,
 											"name": "extraNodeModules",
 											"kind": 32,
 											"kindString": "Variable",
@@ -168,7 +168,7 @@
 											"sources": [
 												{
 													"fileName": "index.ts",
-													"line": 34,
+													"line": 37,
 													"character": 28
 												}
 											],
@@ -182,20 +182,20 @@
 													{
 														"type": "reflection",
 														"declaration": {
-															"id": 125,
+															"id": 131,
 															"name": "__type",
 															"kind": 65536,
 															"kindString": "Type literal",
 															"flags": {},
 															"indexSignature": {
-																"id": 126,
+																"id": 132,
 																"name": "__index",
 																"kind": 8192,
 																"kindString": "Index signature",
 																"flags": {},
 																"parameters": [
 																	{
-																		"id": 127,
+																		"id": 133,
 																		"name": "moduleName",
 																		"kind": 32768,
 																		"kindString": "Parameter",
@@ -217,7 +217,7 @@
 											}
 										},
 										{
-											"id": 123,
+											"id": 129,
 											"name": "resolveRequest",
 											"kind": 32,
 											"kindString": "Variable",
@@ -227,14 +227,14 @@
 											"sources": [
 												{
 													"fileName": "index.ts",
-													"line": 33,
+													"line": 36,
 													"character": 26
 												}
 											],
 											"type": {
 												"type": "reference",
 												"name": "CustomResolver",
-												"id": 137
+												"id": 143
 											}
 										}
 									],
@@ -243,15 +243,15 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												124,
-												123
+												130,
+												129
 											]
 										}
 									],
 									"sources": [
 										{
 											"fileName": "index.ts",
-											"line": 32,
+											"line": 35,
 											"character": 17
 										}
 									]
@@ -259,7 +259,7 @@
 							}
 						},
 						{
-							"id": 128,
+							"id": 134,
 							"name": "sourceExts",
 							"kind": 1024,
 							"kindString": "Property",
@@ -270,7 +270,7 @@
 							"sources": [
 								{
 									"fileName": "index.ts",
-									"line": 36,
+									"line": 39,
 									"character": 18
 								}
 							],
@@ -283,7 +283,7 @@
 							}
 						},
 						{
-							"id": 120,
+							"id": 126,
 							"name": "watchFolders",
 							"kind": 1024,
 							"kindString": "Property",
@@ -293,7 +293,7 @@
 							"sources": [
 								{
 									"fileName": "index.ts",
-									"line": 31,
+									"line": 34,
 									"character": 20
 								}
 							],
@@ -311,23 +311,23 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								129,
-								121,
-								128,
-								120
+								135,
+								127,
+								134,
+								126
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 30,
+							"line": 33,
 							"character": 28
 						}
 					]
 				},
 				{
-					"id": 116,
+					"id": 122,
 					"name": "IResolution",
 					"kind": 256,
 					"kindString": "Interface",
@@ -336,7 +336,7 @@
 					},
 					"children": [
 						{
-							"id": 118,
+							"id": 124,
 							"name": "filePath",
 							"kind": 1024,
 							"kindString": "Property",
@@ -346,7 +346,7 @@
 							"sources": [
 								{
 									"fileName": "index.ts",
-									"line": 27,
+									"line": 30,
 									"character": 16
 								}
 							],
@@ -356,7 +356,7 @@
 							}
 						},
 						{
-							"id": 117,
+							"id": 123,
 							"name": "type",
 							"kind": 1024,
 							"kindString": "Property",
@@ -366,14 +366,14 @@
 							"sources": [
 								{
 									"fileName": "index.ts",
-									"line": 26,
+									"line": 29,
 									"character": 12
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "ResolutionType",
-								"id": 113
+								"id": 119
 							}
 						}
 					],
@@ -382,21 +382,21 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								118,
-								117
+								124,
+								123
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 25,
+							"line": 28,
 							"character": 32
 						}
 					]
 				},
 				{
-					"id": 132,
+					"id": 138,
 					"name": "IResolverConfig",
 					"kind": 256,
 					"kindString": "Interface",
@@ -405,7 +405,7 @@
 					},
 					"children": [
 						{
-							"id": 135,
+							"id": 141,
 							"name": "assetExts",
 							"kind": 1024,
 							"kindString": "Property",
@@ -416,7 +416,7 @@
 							"sources": [
 								{
 									"fileName": "index.ts",
-									"line": 43,
+									"line": 46,
 									"character": 17
 								}
 							],
@@ -429,7 +429,7 @@
 							}
 						},
 						{
-							"id": 136,
+							"id": 142,
 							"name": "mainFields",
 							"kind": 1024,
 							"kindString": "Property",
@@ -439,7 +439,7 @@
 							"sources": [
 								{
 									"fileName": "index.ts",
-									"line": 44,
+									"line": 47,
 									"character": 18
 								}
 							],
@@ -452,7 +452,7 @@
 							}
 						},
 						{
-							"id": 133,
+							"id": 139,
 							"name": "originModulePath",
 							"kind": 1024,
 							"kindString": "Property",
@@ -462,7 +462,7 @@
 							"sources": [
 								{
 									"fileName": "index.ts",
-									"line": 41,
+									"line": 44,
 									"character": 24
 								}
 							],
@@ -472,7 +472,7 @@
 							}
 						},
 						{
-							"id": 134,
+							"id": 140,
 							"name": "sourceExts",
 							"kind": 1024,
 							"kindString": "Property",
@@ -482,7 +482,7 @@
 							"sources": [
 								{
 									"fileName": "index.ts",
-									"line": 42,
+									"line": 45,
 									"character": 18
 								}
 							],
@@ -500,23 +500,23 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								135,
-								136,
-								133,
-								134
+								141,
+								142,
+								139,
+								140
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 40,
+							"line": 43,
 							"character": 36
 						}
 					]
 				},
 				{
-					"id": 137,
+					"id": 143,
 					"name": "CustomResolver",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -526,28 +526,28 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 19,
+							"line": 22,
 							"character": 30
 						}
 					],
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 138,
+							"id": 144,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 139,
+									"id": 145,
 									"name": "__call",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 140,
+											"id": 146,
 											"name": "metro",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -555,11 +555,11 @@
 											"type": {
 												"type": "reference",
 												"name": "IResolverConfig",
-												"id": 132
+												"id": 138
 											}
 										},
 										{
-											"id": 141,
+											"id": 147,
 											"name": "moduleName",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -570,7 +570,7 @@
 											}
 										},
 										{
-											"id": 142,
+											"id": 148,
 											"name": "platform",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -587,7 +587,7 @@
 											{
 												"type": "reference",
 												"name": "IResolution",
-												"id": 116
+												"id": 122
 											},
 											{
 												"type": "intrinsic",
@@ -600,7 +600,7 @@
 							"sources": [
 								{
 									"fileName": "index.ts",
-									"line": 19,
+									"line": 22,
 									"character": 32
 								}
 							]
@@ -613,43 +613,43 @@
 					"title": "Enumerations",
 					"kind": 4,
 					"children": [
-						113
+						119
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						119,
-						116,
-						132
+						125,
+						122,
+						138
 					]
 				},
 				{
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						137
+						143
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 12,
+					"line": 15,
 					"character": 22
 				}
 			]
 		},
 		{
-			"id": 33,
+			"id": 34,
 			"name": "MetroConfigHelper",
 			"kind": 128,
 			"kindString": "Class",
 			"flags": {},
 			"children": [
 				{
-					"id": 43,
+					"id": 44,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
@@ -658,14 +658,14 @@
 					},
 					"signatures": [
 						{
-							"id": 44,
+							"id": 45,
 							"name": "new MetroConfigHelper",
 							"kind": 16384,
 							"kindString": "Constructor signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 45,
+									"id": 46,
 									"name": "options",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -675,27 +675,27 @@
 									"type": {
 										"type": "reference",
 										"name": "IMetroConfigHelperOptions",
-										"id": 25
+										"id": 26
 									}
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "MetroConfigHelper",
-								"id": 33
+								"id": 34
 							}
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 137,
+							"line": 138,
 							"character": 51
 						}
 					]
 				},
 				{
-					"id": 41,
+					"id": 42,
 					"name": "config_",
 					"kind": 1024,
 					"kindString": "Property",
@@ -706,18 +706,18 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 136,
+							"line": 137,
 							"character": 19
 						}
 					],
 					"type": {
 						"type": "reference",
 						"name": "Metro.IConfig",
-						"id": 119
+						"id": 125
 					}
 				},
 				{
-					"id": 40,
+					"id": 41,
 					"name": "customResolver_",
 					"kind": 1024,
 					"kindString": "Property",
@@ -728,18 +728,18 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 135,
+							"line": 136,
 							"character": 27
 						}
 					],
 					"type": {
 						"type": "reference",
 						"name": "Metro.CustomResolver",
-						"id": 137
+						"id": 143
 					}
 				},
 				{
-					"id": 36,
+					"id": 37,
 					"name": "defaultConfig_",
 					"kind": 1024,
 					"kindString": "Property",
@@ -750,7 +750,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 131,
+							"line": 132,
 							"character": 26
 						}
 					],
@@ -761,13 +761,13 @@
 							{
 								"type": "reference",
 								"name": "IConfig",
-								"id": 119
+								"id": 125
 							}
 						]
 					}
 				},
 				{
-					"id": 35,
+					"id": 36,
 					"name": "logger_",
 					"kind": 1024,
 					"kindString": "Property",
@@ -777,7 +777,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 130,
+							"line": 131,
 							"character": 19
 						}
 					],
@@ -788,7 +788,7 @@
 					}
 				},
 				{
-					"id": 34,
+					"id": 35,
 					"name": "monorepoFinders_",
 					"kind": 1024,
 					"kindString": "Property",
@@ -798,7 +798,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 128,
+							"line": 129,
 							"character": 28
 						}
 					],
@@ -807,12 +807,12 @@
 						"elementType": {
 							"type": "reference",
 							"name": "FMonorepoFinder",
-							"id": 143
+							"id": 149
 						}
 					}
 				},
 				{
-					"id": 37,
+					"id": 38,
 					"name": "monorepo_",
 					"kind": 1024,
 					"kindString": "Property",
@@ -823,18 +823,18 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 132,
+							"line": 133,
 							"character": 21
 						}
 					],
 					"type": {
 						"type": "reference",
 						"name": "IMonorepoInfo",
-						"id": 10
+						"id": 14
 					}
 				},
 				{
-					"id": 38,
+					"id": 39,
 					"name": "projectRoot_",
 					"kind": 1024,
 					"kindString": "Property",
@@ -845,7 +845,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 133,
+							"line": 134,
 							"character": 24
 						}
 					],
@@ -864,7 +864,7 @@
 					}
 				},
 				{
-					"id": 42,
+					"id": 43,
 					"name": "typeScript_",
 					"kind": 1024,
 					"kindString": "Property",
@@ -874,7 +874,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 137,
+							"line": 138,
 							"character": 23
 						}
 					],
@@ -888,13 +888,13 @@
 							{
 								"type": "reference",
 								"name": "ITypeScriptConfig",
-								"id": 30
+								"id": 31
 							}
 						]
 					}
 				},
 				{
-					"id": 39,
+					"id": 40,
 					"name": "watchFolders_",
 					"kind": 1024,
 					"kindString": "Property",
@@ -904,7 +904,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 134,
+							"line": 135,
 							"character": 25
 						}
 					],
@@ -917,7 +917,7 @@
 					}
 				},
 				{
-					"id": 84,
+					"id": 85,
 					"name": "config",
 					"kind": 2048,
 					"kindString": "Method",
@@ -926,7 +926,7 @@
 					},
 					"signatures": [
 						{
-							"id": 85,
+							"id": 86,
 							"name": "config",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -934,18 +934,18 @@
 							"type": {
 								"type": "reference",
 								"name": "IConfig",
-								"id": 119
+								"id": 125
 							}
 						},
 						{
-							"id": 86,
+							"id": 87,
 							"name": "config",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 87,
+									"id": 88,
 									"name": "newConfig",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -953,7 +953,7 @@
 									"type": {
 										"type": "reference",
 										"name": "IConfig",
-										"id": 119
+										"id": 125
 									}
 								}
 							],
@@ -966,23 +966,23 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 289,
+							"line": 286,
 							"character": 17
 						},
 						{
 							"fileName": "index.ts",
-							"line": 290,
+							"line": 287,
 							"character": 17
 						},
 						{
 							"fileName": "index.ts",
-							"line": 291,
+							"line": 288,
 							"character": 17
 						}
 					]
 				},
 				{
-					"id": 82,
+					"id": 83,
 					"name": "createCustomResolver",
 					"kind": 2048,
 					"kindString": "Method",
@@ -991,7 +991,7 @@
 					},
 					"signatures": [
 						{
-							"id": 83,
+							"id": 84,
 							"name": "createCustomResolver",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -999,20 +999,20 @@
 							"type": {
 								"type": "reference",
 								"name": "Metro.CustomResolver",
-								"id": 137
+								"id": 143
 							}
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 265,
+							"line": 266,
 							"character": 31
 						}
 					]
 				},
 				{
-					"id": 78,
+					"id": 79,
 					"name": "customResolver",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1021,7 +1021,7 @@
 					},
 					"signatures": [
 						{
-							"id": 79,
+							"id": 80,
 							"name": "customResolver",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1029,18 +1029,18 @@
 							"type": {
 								"type": "reference",
 								"name": "Metro.CustomResolver",
-								"id": 137
+								"id": 143
 							}
 						},
 						{
-							"id": 80,
+							"id": 81,
 							"name": "customResolver",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 81,
+									"id": 82,
 									"name": "newResolver",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1048,7 +1048,7 @@
 									"type": {
 										"type": "reference",
 										"name": "Metro.CustomResolver",
-										"id": 137
+										"id": 143
 									}
 								}
 							],
@@ -1059,11 +1059,6 @@
 						}
 					],
 					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 252,
-							"character": 25
-						},
 						{
 							"fileName": "index.ts",
 							"line": 253,
@@ -1073,11 +1068,16 @@
 							"fileName": "index.ts",
 							"line": 254,
 							"character": 25
+						},
+						{
+							"fileName": "index.ts",
+							"line": 255,
+							"character": 25
 						}
 					]
 				},
 				{
-					"id": 59,
+					"id": 60,
 					"name": "defaultConfig",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1086,7 +1086,7 @@
 					},
 					"signatures": [
 						{
-							"id": 60,
+							"id": 61,
 							"name": "defaultConfig",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1098,20 +1098,20 @@
 									{
 										"type": "reference",
 										"name": "IConfig",
-										"id": 119
+										"id": 125
 									}
 								]
 							}
 						},
 						{
-							"id": 61,
+							"id": 62,
 							"name": "defaultConfig",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 62,
+									"id": 63,
 									"name": "newDefaultConfig",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1123,7 +1123,7 @@
 											{
 												"type": "reference",
 												"name": "IConfig",
-												"id": 119
+												"id": 125
 											}
 										]
 									}
@@ -1138,11 +1138,6 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 189,
-							"character": 24
-						},
-						{
-							"fileName": "index.ts",
 							"line": 190,
 							"character": 24
 						},
@@ -1150,11 +1145,58 @@
 							"fileName": "index.ts",
 							"line": 191,
 							"character": 24
+						},
+						{
+							"fileName": "index.ts",
+							"line": 192,
+							"character": 24
 						}
 					]
 				},
 				{
-					"id": 93,
+					"id": 105,
+					"name": "fileModuleExists",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPrivate": true
+					},
+					"signatures": [
+						{
+							"id": 106,
+							"name": "fileModuleExists",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 107,
+									"name": "pathname",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 432,
+							"character": 28
+						}
+					]
+				},
+				{
+					"id": 94,
 					"name": "filterByNonEmptyString",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1163,14 +1205,14 @@
 					},
 					"signatures": [
 						{
-							"id": 94,
+							"id": 95,
 							"name": "filterByNonEmptyString",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 95,
+									"id": 96,
 									"name": "pathname",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1190,13 +1232,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 342,
+							"line": 339,
 							"character": 43
 						}
 					]
 				},
 				{
-					"id": 53,
+					"id": 54,
 					"name": "findMonorepo",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1205,7 +1247,7 @@
 					},
 					"signatures": [
 						{
-							"id": 54,
+							"id": 55,
 							"name": "findMonorepo",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1220,7 +1262,7 @@
 									{
 										"type": "reference",
 										"name": "IMonorepoInfo",
-										"id": 10
+										"id": 14
 									}
 								]
 							}
@@ -1229,13 +1271,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 170,
+							"line": 171,
 							"character": 23
 						}
 					]
 				},
 				{
-					"id": 88,
+					"id": 89,
 					"name": "generate",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1244,7 +1286,7 @@
 					},
 					"signatures": [
 						{
-							"id": 89,
+							"id": 90,
 							"name": "generate",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1252,20 +1294,20 @@
 							"type": {
 								"type": "reference",
 								"name": "IConfig",
-								"id": 119
+								"id": 125
 							}
 						}
 					],
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 302,
+							"line": 299,
 							"character": 19
 						}
 					]
 				},
 				{
-					"id": 105,
+					"id": 111,
 					"name": "generateComplementaryExtensions",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1274,14 +1316,14 @@
 					},
 					"signatures": [
 						{
-							"id": 106,
+							"id": 112,
 							"name": "generateComplementaryExtensions",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 107,
+									"id": 113,
 									"name": "context",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1289,11 +1331,11 @@
 									"type": {
 										"type": "reference",
 										"name": "IResolverContext",
-										"id": 21
+										"id": 22
 									}
 								},
 								{
-									"id": 108,
+									"id": 114,
 									"name": "baseExtensions",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1319,13 +1361,55 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 417,
+							"line": 449,
 							"character": 43
 						}
 					]
 				},
 				{
-					"id": 109,
+					"id": 108,
+					"name": "isDirectory",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPrivate": true
+					},
+					"signatures": [
+						{
+							"id": 109,
+							"name": "isDirectory",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 110,
+									"name": "pathname",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 444,
+							"character": 23
+						}
+					]
+				},
+				{
+					"id": 115,
 					"name": "isTypeScriptConfig",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1334,14 +1418,14 @@
 					},
 					"signatures": [
 						{
-							"id": 110,
+							"id": 116,
 							"name": "isTypeScriptConfig",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 111,
+									"id": 117,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1361,13 +1445,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 431,
+							"line": 463,
 							"character": 30
 						}
 					]
 				},
 				{
-					"id": 55,
+					"id": 56,
 					"name": "logger",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1376,7 +1460,7 @@
 					},
 					"signatures": [
 						{
-							"id": 56,
+							"id": 57,
 							"name": "logger",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1388,14 +1472,14 @@
 							}
 						},
 						{
-							"id": 57,
+							"id": 58,
 							"name": "logger",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 58,
+									"id": 59,
 									"name": "newLogger",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1416,11 +1500,6 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 178,
-							"character": 17
-						},
-						{
-							"fileName": "index.ts",
 							"line": 179,
 							"character": 17
 						},
@@ -1428,11 +1507,16 @@
 							"fileName": "index.ts",
 							"line": 180,
 							"character": 17
+						},
+						{
+							"fileName": "index.ts",
+							"line": 181,
+							"character": 17
 						}
 					]
 				},
 				{
-					"id": 90,
+					"id": 91,
 					"name": "mapByFolderFollowingSymlink",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1441,14 +1525,14 @@
 					},
 					"signatures": [
 						{
-							"id": 91,
+							"id": 92,
 							"name": "mapByFolderFollowingSymlink",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 92,
+									"id": 93,
 									"name": "pathname",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1468,13 +1552,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 332,
+							"line": 329,
 							"character": 48
 						}
 					]
 				},
 				{
-					"id": 63,
+					"id": 64,
 					"name": "monorepo",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1483,7 +1567,7 @@
 					},
 					"signatures": [
 						{
-							"id": 64,
+							"id": 65,
 							"name": "monorepo",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1491,18 +1575,18 @@
 							"type": {
 								"type": "reference",
 								"name": "IMonorepoInfo",
-								"id": 10
+								"id": 14
 							}
 						},
 						{
-							"id": 65,
+							"id": 66,
 							"name": "monorepo",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 66,
+									"id": 67,
 									"name": "newMonorepoInfo",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1510,7 +1594,7 @@
 									"type": {
 										"type": "reference",
 										"name": "IMonorepoInfo",
-										"id": 10
+										"id": 14
 									}
 								}
 							],
@@ -1523,11 +1607,6 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 200,
-							"character": 19
-						},
-						{
-							"fileName": "index.ts",
 							"line": 201,
 							"character": 19
 						},
@@ -1535,11 +1614,16 @@
 							"fileName": "index.ts",
 							"line": 202,
 							"character": 19
+						},
+						{
+							"fileName": "index.ts",
+							"line": 203,
+							"character": 19
 						}
 					]
 				},
 				{
-					"id": 50,
+					"id": 51,
 					"name": "monorepoFinder",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1548,14 +1632,14 @@
 					},
 					"signatures": [
 						{
-							"id": 51,
+							"id": 52,
 							"name": "monorepoFinder",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 52,
+									"id": 53,
 									"name": "finder",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1567,7 +1651,7 @@
 										"elementType": {
 											"type": "reference",
 											"name": "FMonorepoFinder",
-											"id": 143
+											"id": 149
 										}
 									}
 								}
@@ -1581,13 +1665,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 163,
+							"line": 164,
 							"character": 25
 						}
 					]
 				},
 				{
-					"id": 74,
+					"id": 75,
 					"name": "packageRoots",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1596,7 +1680,7 @@
 					},
 					"signatures": [
 						{
-							"id": 75,
+							"id": 76,
 							"name": "packageRoots",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1613,13 +1697,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 240,
+							"line": 241,
 							"character": 23
 						}
 					]
 				},
 				{
-					"id": 46,
+					"id": 47,
 					"name": "projectRoot",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1628,7 +1712,7 @@
 					},
 					"signatures": [
 						{
-							"id": 47,
+							"id": 48,
 							"name": "projectRoot",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1639,14 +1723,14 @@
 							}
 						},
 						{
-							"id": 48,
+							"id": 49,
 							"name": "projectRoot",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 49,
+									"id": 50,
 									"name": "newProjectRoot",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1666,11 +1750,6 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 152,
-							"character": 22
-						},
-						{
-							"fileName": "index.ts",
 							"line": 153,
 							"character": 22
 						},
@@ -1678,11 +1757,16 @@
 							"fileName": "index.ts",
 							"line": 154,
 							"character": 22
+						},
+						{
+							"fileName": "index.ts",
+							"line": 155,
+							"character": 22
 						}
 					]
 				},
 				{
-					"id": 96,
+					"id": 97,
 					"name": "resolveInProject",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1691,14 +1775,14 @@
 					},
 					"signatures": [
 						{
-							"id": 97,
+							"id": 98,
 							"name": "resolveInProject",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 98,
+									"id": 99,
 									"name": "context",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1706,18 +1790,7 @@
 									"type": {
 										"type": "reference",
 										"name": "IResolverContext",
-										"id": 21
-									}
-								},
-								{
-									"id": 99,
-									"name": "projectRoot",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
+										"id": 22
 									}
 								},
 								{
@@ -1729,7 +1802,7 @@
 									"type": {
 										"type": "reference",
 										"name": "ResolutionType",
-										"id": 113
+										"id": 119
 									}
 								},
 								{
@@ -1772,7 +1845,7 @@
 													"sources": [
 														{
 															"fileName": "index.ts",
-															"line": 411,
+															"line": 426,
 															"character": 35
 														}
 													],
@@ -1791,14 +1864,14 @@
 													"sources": [
 														{
 															"fileName": "index.ts",
-															"line": 411,
+															"line": 426,
 															"character": 25
 														}
 													],
 													"type": {
 														"type": "reference",
 														"name": "ResolutionType",
-														"id": 113
+														"id": 119
 													}
 												}
 											],
@@ -1821,13 +1894,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 346,
+							"line": 343,
 							"character": 28
 						}
 					]
 				},
 				{
-					"id": 67,
+					"id": 68,
 					"name": "typeScript",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1836,7 +1909,7 @@
 					},
 					"signatures": [
 						{
-							"id": 68,
+							"id": 69,
 							"name": "typeScript",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1851,20 +1924,20 @@
 									{
 										"type": "reference",
 										"name": "ITypeScriptConfig",
-										"id": 30
+										"id": 31
 									}
 								]
 							}
 						},
 						{
-							"id": 69,
+							"id": 70,
 							"name": "typeScript",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 70,
+									"id": 71,
 									"name": "enabled",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1887,7 +1960,7 @@
 													{
 														"type": "reference",
 														"name": "ITypeScriptConfig",
-														"id": 30
+														"id": 31
 													}
 												]
 											}
@@ -1904,11 +1977,6 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 213,
-							"character": 21
-						},
-						{
-							"fileName": "index.ts",
 							"line": 214,
 							"character": 21
 						},
@@ -1916,11 +1984,16 @@
 							"fileName": "index.ts",
 							"line": 215,
 							"character": 21
+						},
+						{
+							"fileName": "index.ts",
+							"line": 216,
+							"character": 21
 						}
 					]
 				},
 				{
-					"id": 71,
+					"id": 72,
 					"name": "watchFolder",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1929,14 +2002,14 @@
 					},
 					"signatures": [
 						{
-							"id": 72,
+							"id": 73,
 							"name": "watchFolder",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 73,
+									"id": 74,
 									"name": "folder",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1961,13 +2034,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 235,
+							"line": 236,
 							"character": 22
 						}
 					]
 				},
 				{
-					"id": 76,
+					"id": 77,
 					"name": "watchFolders",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1976,7 +2049,7 @@
 					},
 					"signatures": [
 						{
-							"id": 77,
+							"id": 78,
 							"name": "watchFolders",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1993,7 +2066,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 244,
+							"line": 245,
 							"character": 23
 						}
 					]
@@ -2004,54 +2077,56 @@
 					"title": "Constructors",
 					"kind": 512,
 					"children": [
-						43
+						44
 					]
 				},
 				{
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
+						42,
 						41,
-						40,
+						37,
 						36,
 						35,
-						34,
-						37,
 						38,
-						42,
-						39
+						39,
+						43,
+						40
 					]
 				},
 				{
 					"title": "Methods",
 					"kind": 2048,
 					"children": [
-						84,
-						82,
-						78,
-						59,
-						93,
-						53,
-						88,
+						85,
+						83,
+						79,
+						60,
 						105,
-						109,
-						55,
-						90,
-						63,
-						50,
-						74,
-						46,
-						96,
-						67,
-						71,
-						76
+						94,
+						54,
+						89,
+						111,
+						108,
+						115,
+						56,
+						91,
+						64,
+						51,
+						75,
+						47,
+						97,
+						68,
+						72,
+						77
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 126,
+					"line": 127,
 					"character": 23
 				}
 			]
@@ -2076,7 +2151,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 8,
+							"line": 10,
 							"character": 9
 						}
 					],
@@ -2122,7 +2197,7 @@
 							"sources": [
 								{
 									"fileName": "index.ts",
-									"line": 8,
+									"line": 10,
 									"character": 10
 								}
 							]
@@ -2130,7 +2205,7 @@
 					}
 				},
 				{
-					"id": 6,
+					"id": 10,
 					"name": "error",
 					"kind": 1024,
 					"kindString": "Property",
@@ -2140,7 +2215,71 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 9,
+							"line": 12,
+							"character": 9
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 11,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 12,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 13,
+											"name": "args",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isRest": true
+											},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "any"
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "index.ts",
+									"line": 12,
+									"character": 10
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 6,
+					"name": "trace",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 11,
 							"character": 9
 						}
 					],
@@ -2186,7 +2325,7 @@
 							"sources": [
 								{
 									"fileName": "index.ts",
-									"line": 9,
+									"line": 11,
 									"character": 10
 								}
 							]
@@ -2200,6 +2339,7 @@
 					"kind": 1024,
 					"children": [
 						2,
+						10,
 						6
 					]
 				}
@@ -2207,20 +2347,20 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 7,
+					"line": 9,
 					"character": 24
 				}
 			]
 		},
 		{
-			"id": 25,
+			"id": 26,
 			"name": "IMetroConfigHelperOptions",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 27,
+					"id": 28,
 					"name": "defaultConfig",
 					"kind": 1024,
 					"kindString": "Property",
@@ -2230,7 +2370,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 71,
+							"line": 72,
 							"character": 17
 						}
 					],
@@ -2241,13 +2381,13 @@
 							{
 								"type": "reference",
 								"name": "IConfig",
-								"id": 119
+								"id": 125
 							}
 						]
 					}
 				},
 				{
-					"id": 26,
+					"id": 27,
 					"name": "logger",
 					"kind": 1024,
 					"kindString": "Property",
@@ -2257,7 +2397,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 70,
+							"line": 71,
 							"character": 10
 						}
 					],
@@ -2268,7 +2408,7 @@
 					}
 				},
 				{
-					"id": 28,
+					"id": 29,
 					"name": "monorepoFinders",
 					"kind": 1024,
 					"kindString": "Property",
@@ -2278,7 +2418,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 72,
+							"line": 73,
 							"character": 19
 						}
 					],
@@ -2287,12 +2427,12 @@
 						"elementType": {
 							"type": "reference",
 							"name": "FMonorepoFinder",
-							"id": 143
+							"id": 149
 						}
 					}
 				},
 				{
-					"id": 29,
+					"id": 30,
 					"name": "projectRoot",
 					"kind": 1024,
 					"kindString": "Property",
@@ -2302,7 +2442,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 73,
+							"line": 74,
 							"character": 15
 						}
 					],
@@ -2326,23 +2466,23 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						27,
-						26,
 						28,
-						29
+						27,
+						29,
+						30
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 69,
+					"line": 70,
 					"character": 35
 				}
 			]
 		},
 		{
-			"id": 10,
+			"id": 14,
 			"name": "IMonorepoInfo",
 			"kind": 256,
 			"kindString": "Interface",
@@ -2351,27 +2491,7 @@
 			},
 			"children": [
 				{
-					"id": 12,
-					"name": "nodeModulesRoot",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {
-						"isExported": true
-					},
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 50,
-							"character": 19
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					}
-				},
-				{
-					"id": 17,
+					"id": 19,
 					"name": "packages",
 					"kind": 1024,
 					"kindString": "Property",
@@ -2381,7 +2501,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 55,
+							"line": 56,
 							"character": 12
 						}
 					],
@@ -2392,32 +2512,14 @@
 							{
 								"type": "reflection",
 								"declaration": {
-									"id": 18,
+									"id": 20,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 20,
-											"name": "nodeModulesRoot",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "index.ts",
-													"line": 55,
-													"character": 51
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										},
-										{
-											"id": 19,
+											"id": 21,
 											"name": "root",
 											"kind": 32,
 											"kindString": "Variable",
@@ -2425,7 +2527,7 @@
 											"sources": [
 												{
 													"fileName": "index.ts",
-													"line": 55,
+													"line": 56,
 													"character": 26
 												}
 											],
@@ -2440,15 +2542,14 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												20,
-												19
+												21
 											]
 										}
 									],
 									"sources": [
 										{
 											"fileName": "index.ts",
-											"line": 55,
+											"line": 56,
 											"character": 20
 										}
 									]
@@ -2458,7 +2559,7 @@
 					}
 				},
 				{
-					"id": 13,
+					"id": 16,
 					"name": "project",
 					"kind": 1024,
 					"kindString": "Property",
@@ -2468,39 +2569,21 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 51,
+							"line": 53,
 							"character": 11
 						}
 					],
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 14,
+							"id": 17,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 16,
-									"name": "nodeModulesRoot",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {},
-									"sources": [
-										{
-											"fileName": "index.ts",
-											"line": 53,
-											"character": 23
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								},
-								{
-									"id": 15,
+									"id": 18,
 									"name": "root",
 									"kind": 32,
 									"kindString": "Variable",
@@ -2508,7 +2591,7 @@
 									"sources": [
 										{
 											"fileName": "index.ts",
-											"line": 52,
+											"line": 54,
 											"character": 12
 										}
 									],
@@ -2523,15 +2606,14 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										16,
-										15
+										18
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "index.ts",
-									"line": 51,
+									"line": 53,
 									"character": 12
 								}
 							]
@@ -2539,7 +2621,7 @@
 					}
 				},
 				{
-					"id": 11,
+					"id": 15,
 					"name": "root",
 					"kind": 1024,
 					"kindString": "Property",
@@ -2549,7 +2631,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 49,
+							"line": 52,
 							"character": 8
 						}
 					],
@@ -2564,30 +2646,29 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						12,
-						17,
-						13,
-						11
+						19,
+						16,
+						15
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 48,
+					"line": 51,
 					"character": 30
 				}
 			]
 		},
 		{
-			"id": 21,
+			"id": 22,
 			"name": "IResolverContext",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 22,
+					"id": 23,
 					"name": "metro",
 					"kind": 1024,
 					"kindString": "Property",
@@ -2595,18 +2676,18 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 59,
+							"line": 60,
 							"character": 9
 						}
 					],
 					"type": {
 						"type": "reference",
 						"name": "IResolverConfig",
-						"id": 132
+						"id": 138
 					}
 				},
 				{
-					"id": 23,
+					"id": 24,
 					"name": "moduleName",
 					"kind": 1024,
 					"kindString": "Property",
@@ -2614,7 +2695,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 60,
+							"line": 61,
 							"character": 14
 						}
 					],
@@ -2624,7 +2705,7 @@
 					}
 				},
 				{
-					"id": 24,
+					"id": 25,
 					"name": "platform",
 					"kind": 1024,
 					"kindString": "Property",
@@ -2632,7 +2713,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 61,
+							"line": 62,
 							"character": 12
 						}
 					],
@@ -2647,29 +2728,29 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						22,
 						23,
-						24
+						24,
+						25
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 58,
+					"line": 59,
 					"character": 26
 				}
 			]
 		},
 		{
-			"id": 30,
+			"id": 31,
 			"name": "ITypeScriptConfig",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 32,
+					"id": 33,
 					"name": "fileExtensions",
 					"kind": 1024,
 					"kindString": "Property",
@@ -2677,7 +2758,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 78,
+							"line": 79,
 							"character": 18
 						}
 					],
@@ -2690,7 +2771,7 @@
 					}
 				},
 				{
-					"id": 31,
+					"id": 32,
 					"name": "transformerModuleName",
 					"kind": 1024,
 					"kindString": "Property",
@@ -2698,7 +2779,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 77,
+							"line": 78,
 							"character": 25
 						}
 					],
@@ -2713,21 +2794,21 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						32,
-						31
+						33,
+						32
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 76,
+					"line": 77,
 					"character": 27
 				}
 			]
 		},
 		{
-			"id": 143,
+			"id": 149,
 			"name": "FMonorepoFinder",
 			"kind": 4194304,
 			"kindString": "Type alias",
@@ -2735,28 +2816,28 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 64,
+					"line": 65,
 					"character": 20
 				}
 			],
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 144,
+					"id": 150,
 					"name": "__type",
 					"kind": 65536,
 					"kindString": "Type literal",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 145,
+							"id": 151,
 							"name": "__call",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 146,
+									"id": 152,
 									"name": "projectRoot",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2767,7 +2848,7 @@
 									}
 								},
 								{
-									"id": 147,
+									"id": 153,
 									"name": "helper",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2775,7 +2856,7 @@
 									"type": {
 										"type": "reference",
 										"name": "MetroConfigHelper",
-										"id": 33
+										"id": 34
 									}
 								}
 							],
@@ -2785,7 +2866,7 @@
 									{
 										"type": "reference",
 										"name": "IMonorepoInfo",
-										"id": 10
+										"id": 14
 									},
 									{
 										"type": "intrinsic",
@@ -2798,7 +2879,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 64,
+							"line": 65,
 							"character": 22
 						}
 					]
@@ -2806,7 +2887,7 @@
 			}
 		},
 		{
-			"id": 162,
+			"id": 168,
 			"name": "findLernaMonorepo",
 			"kind": 64,
 			"kindString": "Function",
@@ -2815,14 +2896,14 @@
 			},
 			"signatures": [
 				{
-					"id": 163,
+					"id": 169,
 					"name": "findLernaMonorepo",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 164,
+							"id": 170,
 							"name": "projectRoot",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2833,7 +2914,7 @@
 							}
 						},
 						{
-							"id": 165,
+							"id": 171,
 							"name": "helper",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2841,7 +2922,7 @@
 							"type": {
 								"type": "reference",
 								"name": "MetroConfigHelper",
-								"id": 33
+								"id": 34
 							}
 						}
 					],
@@ -2851,7 +2932,7 @@
 							{
 								"type": "reference",
 								"name": "IMonorepoInfo",
-								"id": 10
+								"id": 14
 							},
 							{
 								"type": "intrinsic",
@@ -2864,13 +2945,13 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 437,
+					"line": 469,
 					"character": 33
 				}
 			]
 		},
 		{
-			"id": 166,
+			"id": 172,
 			"name": "findYarnMonorepo",
 			"kind": 64,
 			"kindString": "Function",
@@ -2879,14 +2960,14 @@
 			},
 			"signatures": [
 				{
-					"id": 167,
+					"id": 173,
 					"name": "findYarnMonorepo",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 168,
+							"id": 174,
 							"name": "projectRoot",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2897,7 +2978,7 @@
 							}
 						},
 						{
-							"id": 169,
+							"id": 175,
 							"name": "helper",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2905,7 +2986,7 @@
 							"type": {
 								"type": "reference",
 								"name": "MetroConfigHelper",
-								"id": 33
+								"id": 34
 							}
 						}
 					],
@@ -2915,7 +2996,7 @@
 							{
 								"type": "reference",
 								"name": "IMonorepoInfo",
-								"id": 10
+								"id": 14
 							},
 							{
 								"type": "intrinsic",
@@ -2928,13 +3009,13 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 503,
+					"line": 532,
 					"character": 32
 				}
 			]
 		},
 		{
-			"id": 185,
+			"id": 215,
 			"name": "metroConfig",
 			"kind": 64,
 			"kindString": "Function",
@@ -2943,14 +3024,14 @@
 			},
 			"signatures": [
 				{
-					"id": 186,
+					"id": 216,
 					"name": "metroConfig",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 187,
+							"id": 217,
 							"name": "projectRoot",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -2964,20 +3045,20 @@
 					"type": {
 						"type": "reference",
 						"name": "IConfig",
-						"id": 119
+						"id": 125
 					}
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 584,
+					"line": 659,
 					"character": 27
 				}
 			]
 		},
 		{
-			"id": 181,
+			"id": 211,
 			"name": "metroConfigHelper",
 			"kind": 64,
 			"kindString": "Function",
@@ -2986,14 +3067,14 @@
 			},
 			"signatures": [
 				{
-					"id": 182,
+					"id": 212,
 					"name": "metroConfigHelper",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 183,
+							"id": 213,
 							"name": "projectRoot",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3004,7 +3085,7 @@
 							}
 						},
 						{
-							"id": 184,
+							"id": 214,
 							"name": "options",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3014,41 +3095,41 @@
 							"type": {
 								"type": "reference",
 								"name": "IMetroConfigHelperOptions",
-								"id": 25
+								"id": 26
 							}
 						}
 					],
 					"type": {
 						"type": "reference",
 						"name": "MetroConfigHelper",
-						"id": 33
+						"id": 34
 					}
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 576,
+					"line": 651,
 					"character": 33
 				}
 			]
 		},
 		{
-			"id": 152,
+			"id": 158,
 			"name": "readPackageGlobs",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {},
 			"signatures": [
 				{
-					"id": 153,
+					"id": 159,
 					"name": "readPackageGlobs",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 154,
+							"id": 160,
 							"name": "globs",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3062,7 +3143,7 @@
 							}
 						},
 						{
-							"id": 155,
+							"id": 161,
 							"name": "options",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3070,14 +3151,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 156,
+									"id": 162,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 157,
+											"id": 163,
 											"name": "cwd",
 											"kind": 32,
 											"kindString": "Variable",
@@ -3085,7 +3166,7 @@
 											"sources": [
 												{
 													"fileName": "index.ts",
-													"line": 96,
+													"line": 97,
 													"character": 11
 												}
 											],
@@ -3095,7 +3176,7 @@
 											}
 										},
 										{
-											"id": 158,
+											"id": 164,
 											"name": "ignoredFolders",
 											"kind": 32,
 											"kindString": "Variable",
@@ -3105,7 +3186,7 @@
 											"sources": [
 												{
 													"fileName": "index.ts",
-													"line": 97,
+													"line": 98,
 													"character": 22
 												}
 											],
@@ -3123,15 +3204,15 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												157,
-												158
+												163,
+												164
 											]
 										}
 									],
 									"sources": [
 										{
 											"fileName": "index.ts",
-											"line": 95,
+											"line": 96,
 											"character": 12
 										}
 									]
@@ -3151,27 +3232,27 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 93,
+					"line": 94,
 					"character": 25
 				}
 			]
 		},
 		{
-			"id": 148,
+			"id": 154,
 			"name": "tryParseJsonFile",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {},
 			"signatures": [
 				{
-					"id": 149,
+					"id": 155,
 					"name": "tryParseJsonFile",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"typeParameter": [
 						{
-							"id": 150,
+							"id": 156,
 							"name": "T",
 							"kind": 131072,
 							"kindString": "Type parameter",
@@ -3184,7 +3265,7 @@
 					],
 					"parameters": [
 						{
-							"id": 151,
+							"id": 157,
 							"name": "filename",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3213,27 +3294,27 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 84,
+					"line": 85,
 					"character": 25
 				}
 			]
 		},
 		{
-			"id": 159,
+			"id": 165,
 			"name": "unique",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {},
 			"signatures": [
 				{
-					"id": 160,
+					"id": 166,
 					"name": "unique",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 161,
+							"id": 167,
 							"name": "array",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -3259,13 +3340,188 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 122,
+					"line": 123,
 					"character": 15
 				}
 			]
 		},
 		{
-			"id": 170,
+			"id": 183,
+			"name": "consoleLogger",
+			"kind": 2097152,
+			"kindString": "Object literal",
+			"flags": {
+				"isExported": true,
+				"isConst": true
+			},
+			"children": [
+				{
+					"id": 187,
+					"name": "debug",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 188,
+							"name": "debug",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 189,
+									"name": "args",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isRest": true
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "any"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 632,
+							"character": 9
+						}
+					]
+				},
+				{
+					"id": 190,
+					"name": "error",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 191,
+							"name": "error",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 192,
+									"name": "args",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isRest": true
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "any"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 633,
+							"character": 9
+						}
+					]
+				},
+				{
+					"id": 184,
+					"name": "trace",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 185,
+							"name": "trace",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 186,
+									"name": "args",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isRest": true
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "any"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 631,
+							"character": 9
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						187,
+						190,
+						184
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 630,
+					"character": 26
+				}
+			],
+			"type": {
+				"type": "intrinsic",
+				"name": "object"
+			}
+		},
+		{
+			"id": 193,
 			"name": "defaultHelperOptions",
 			"kind": 2097152,
 			"kindString": "Object literal",
@@ -3275,28 +3531,7 @@
 			},
 			"children": [
 				{
-					"id": 171,
-					"name": "logger",
-					"kind": 32,
-					"kindString": "Variable",
-					"flags": {
-						"isExported": true
-					},
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 562,
-							"character": 10
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "Console"
-					},
-					"defaultValue": " console"
-				},
-				{
-					"id": 172,
+					"id": 207,
 					"name": "monorepoFinders",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3306,7 +3541,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 563,
+							"line": 643,
 							"character": 19
 						}
 					],
@@ -3315,10 +3550,217 @@
 						"elementType": {
 							"type": "reference",
 							"name": "findLernaMonorepo",
-							"id": 162
+							"id": 168
 						}
 					},
 					"defaultValue": " [findLernaMonorepo, findYarnMonorepo]"
+				},
+				{
+					"id": 194,
+					"name": "logger",
+					"kind": 2097152,
+					"kindString": "Object literal",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 199,
+							"name": "debug",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "index.ts",
+									"line": 640,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 200,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 201,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 202,
+													"name": "args",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isRest": true
+													},
+													"type": {
+														"type": "array",
+														"elementType": {
+															"type": "intrinsic",
+															"name": "any"
+														}
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									]
+								}
+							},
+							"defaultValue": " consoleLogger.debug"
+						},
+						{
+							"id": 203,
+							"name": "error",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "index.ts",
+									"line": 641,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 204,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 205,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 206,
+													"name": "args",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isRest": true
+													},
+													"type": {
+														"type": "array",
+														"elementType": {
+															"type": "intrinsic",
+															"name": "any"
+														}
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									]
+								}
+							},
+							"defaultValue": " consoleLogger.error"
+						},
+						{
+							"id": 195,
+							"name": "trace",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "index.ts",
+									"line": 639,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 196,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 197,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 198,
+													"name": "args",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isRest": true
+													},
+													"type": {
+														"type": "array",
+														"elementType": {
+															"type": "intrinsic",
+															"name": "any"
+														}
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									]
+								}
+							},
+							"defaultValue": " nullLogger.trace"
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								199,
+								203,
+								195
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 638,
+							"character": 10
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "object"
+					}
 				}
 			],
 			"groups": [
@@ -3326,15 +3768,21 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						171,
-						172
+						207
+					]
+				},
+				{
+					"title": "Object literals",
+					"kind": 2097152,
+					"children": [
+						194
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 561,
+					"line": 637,
 					"character": 33
 				}
 			],
@@ -3344,7 +3792,7 @@
 			}
 		},
 		{
-			"id": 178,
+			"id": 208,
 			"name": "defaultTypeScriptConfig",
 			"kind": 2097152,
 			"kindString": "Object literal",
@@ -3354,7 +3802,7 @@
 			},
 			"children": [
 				{
-					"id": 179,
+					"id": 209,
 					"name": "fileExtensions",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3364,7 +3812,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 572,
+							"line": 647,
 							"character": 18
 						}
 					],
@@ -3378,7 +3826,7 @@
 					"defaultValue": " [\"ts\", \"tsx\"]"
 				},
 				{
-					"id": 180,
+					"id": 210,
 					"name": "transformerModuleName",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3388,7 +3836,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 573,
+							"line": 648,
 							"character": 25
 						}
 					],
@@ -3404,15 +3852,15 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						179,
-						180
+						209,
+						210
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 571,
+					"line": 646,
 					"character": 36
 				}
 			],
@@ -3422,7 +3870,7 @@
 			}
 		},
 		{
-			"id": 173,
+			"id": 176,
 			"name": "nullLogger",
 			"kind": 2097152,
 			"kindString": "Object literal",
@@ -3432,7 +3880,7 @@
 			},
 			"children": [
 				{
-					"id": 174,
+					"id": 179,
 					"name": "debug",
 					"kind": 64,
 					"kindString": "Function",
@@ -3441,7 +3889,7 @@
 					},
 					"signatures": [
 						{
-							"id": 175,
+							"id": 180,
 							"name": "debug",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3455,13 +3903,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 567,
+							"line": 625,
 							"character": 9
 						}
 					]
 				},
 				{
-					"id": 176,
+					"id": 181,
 					"name": "error",
 					"kind": 64,
 					"kindString": "Function",
@@ -3470,7 +3918,7 @@
 					},
 					"signatures": [
 						{
-							"id": 177,
+							"id": 182,
 							"name": "error",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3484,7 +3932,36 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 568,
+							"line": 626,
+							"character": 9
+						}
+					]
+				},
+				{
+					"id": 177,
+					"name": "trace",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 178,
+							"name": "trace",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 624,
 							"character": 9
 						}
 					]
@@ -3495,15 +3972,16 @@
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						174,
-						176
+						179,
+						181,
+						177
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 566,
+					"line": 623,
 					"character": 23
 				}
 			],
@@ -3518,14 +3996,14 @@
 			"title": "Modules",
 			"kind": 2,
 			"children": [
-				112
+				118
 			]
 		},
 		{
 			"title": "Classes",
 			"kind": 128,
 			"children": [
-				33
+				34
 			]
 		},
 		{
@@ -3533,39 +4011,40 @@
 			"kind": 256,
 			"children": [
 				1,
-				25,
-				10,
-				21,
-				30
+				26,
+				14,
+				22,
+				31
 			]
 		},
 		{
 			"title": "Type aliases",
 			"kind": 4194304,
 			"children": [
-				143
+				149
 			]
 		},
 		{
 			"title": "Functions",
 			"kind": 64,
 			"children": [
-				162,
-				166,
-				185,
-				181,
-				152,
-				148,
-				159
+				168,
+				172,
+				215,
+				211,
+				158,
+				154,
+				165
 			]
 		},
 		{
 			"title": "Object literals",
 			"kind": 2097152,
 			"children": [
-				170,
-				178,
-				173
+				183,
+				193,
+				208,
+				176
 			]
 		}
 	]
