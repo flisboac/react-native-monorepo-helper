@@ -4,6 +4,7 @@ import glob from 'glob';
 import path from 'path';
 import chalk from 'chalk';
 import resolve from 'resolve';
+import cp from 'child_process';
 
 export interface ILogger {
     debug: (...args: any[]) => any;
@@ -49,12 +50,10 @@ export namespace Metro {
 
 export interface IMonorepoInfo {
     root: string;
-    nodeModulesRoot: string;
     project: {
         root: string;
-        nodeModulesRoot: string;
     };
-    packages: Array<{ root: string, nodeModulesRoot: string }>;
+    packages: Array<{ root: string }>;
 }
 
 interface IResolverContext {
@@ -274,14 +273,10 @@ class MetroConfigHelper {
 
             const sourceExts = context.metro.sourceExts;
             const assetExts = context.metro.assetExts || [];
-            const projectRoot = this.monorepo().project.root;
-            const monorepoRoot = this.monorepo().root;
 
             const resolution =
-                this.resolveInProject(context, projectRoot, Metro.ResolutionType.SOURCE_FILE, sourceExts)
-                || this.resolveInProject(context, projectRoot, Metro.ResolutionType.ASSET, assetExts)
-                || this.resolveInProject(context, monorepoRoot, Metro.ResolutionType.SOURCE_FILE, sourceExts)
-                || this.resolveInProject(context, monorepoRoot, Metro.ResolutionType.ASSET, assetExts)
+                this.resolveInProject(context, Metro.ResolutionType.SOURCE_FILE, sourceExts)
+                || this.resolveInProject(context, Metro.ResolutionType.ASSET, assetExts)
                 || null;
 
             return resolution;
@@ -347,7 +342,6 @@ class MetroConfigHelper {
 
     private resolveInProject(
         context: IResolverContext,
-        _: string, // projectRoot
         type: Metro.ResolutionType,
         extensions: string[],
     ) {
@@ -522,14 +516,11 @@ export function findLernaMonorepo(
     }
 
     const info = {
-        nodeModulesRoot: path.resolve(monorepoRoot, 'node_modules'),
         packages:
             packageRoots.map(root => ({
-                nodeModulesRoot: path.resolve(monorepoRoot, root, 'node_modules'),
                 root: path.resolve(monorepoRoot, root),
             })),
         project: {
-            nodeModulesRoot: path.resolve(projectRoot, 'node_modules'),
             root: projectRoot,
         },
         root: monorepoRoot,
@@ -547,21 +538,57 @@ export function findYarnMonorepo(
     let found = false;
     let monorepoRoot = projectRoot;
 
+    const YARN = process.env.YARN || 'yarn';
+    let yarnInPath: boolean = true;
+
+    try {
+        cp.execFileSync(YARN, ['--version']);
+    } catch (err) {
+        yarnInPath = false;
+        helper.logger().debug(`** It seems you don't have yarn in your path.`
+         + ` Reverting to glob-based package root resolution...`);
+    }
+
     while (true) {
         helper.logger().debug(`Searching for yarn monorepo at '${monorepoRoot}'...`);
         const packageJsonFilename = path.resolve(monorepoRoot, "package.json");
-        const packageJson = tryParseJsonFile(packageJsonFilename);
 
-        if (packageJson) {
-            const workspaces = packageJson.workspaces;
+        if (fs.existsSync(packageJsonFilename)) {
+            if (yarnInPath) {
+                let workspaceInfoJson: string | undefined;
 
-            if (workspaces instanceof Array) {
-                const paths = readPackageGlobs(workspaces, { cwd: monorepoRoot });
-                packageRoots = packageRoots.concat(paths);
+                try {
+                    // Unless something is terribly wrong with yarn or the project layout/configuration,
+                    // yarn will fail in this only when the current search folder is not a workspace root.
+                    // We should continue our search upwards in the filesystem tree if the folder is not
+                    // a workspace, hence the try-catch.
+                    workspaceInfoJson = cp.execFileSync(YARN, ['workspaces', 'info', '--silent'], {
+                        cwd: monorepoRoot,
+                    }).toString();
+                } catch (err) {}
 
-            } else if (typeof workspaces === 'object' && workspaces.packages instanceof Array) {
-                const paths = readPackageGlobs(workspaces.packages, { cwd: monorepoRoot });
-                packageRoots = packageRoots.concat(paths);
+                if (workspaceInfoJson) {
+                    const workspaceInfo = JSON.parse(workspaceInfoJson);
+
+                    packageRoots = Object.keys(workspaceInfo)
+                        .map(packageName => `${monorepoRoot}/${workspaceInfo[packageName].location}`);
+                }
+
+            } else {
+                const packageJson = tryParseJsonFile(packageJsonFilename);
+
+                if (packageJson) {
+                    const workspaces = packageJson.workspaces;
+
+                    if (workspaces instanceof Array) {
+                        const paths = readPackageGlobs(workspaces, { cwd: monorepoRoot });
+                        packageRoots = packageRoots.concat(paths);
+
+                    } else if (typeof workspaces === 'object' && workspaces.packages instanceof Array) {
+                        const paths = readPackageGlobs(workspaces.packages, { cwd: monorepoRoot });
+                        packageRoots = packageRoots.concat(paths);
+                    }
+                }
             }
 
             if (packageRoots && packageRoots.length > 0) {
@@ -581,15 +608,12 @@ export function findYarnMonorepo(
 
     const info = {
         root: monorepoRoot,
-        nodeModulesRoot: path.resolve(monorepoRoot, 'node_modules'),
         packages:
             packageRoots.map(root => ({
                 root: path.resolve(monorepoRoot, root),
-                nodeModulesRoot: path.resolve(monorepoRoot, root, 'node_modules'),
             })),
         project: {
             root: projectRoot,
-            nodeModulesRoot: path.resolve(projectRoot, 'node_modules'),
         },
     };
     helper.logger().debug(`Found yarn monorepo.`, info);
