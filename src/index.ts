@@ -31,6 +31,7 @@ export namespace Metro {
     }
 
     export interface IConfig {
+        projectRoot?: string;
         watchFolders: string[];
         resolver: {
             resolveRequest?: CustomResolver;
@@ -304,7 +305,7 @@ class MetroConfigHelper {
                 ...this.watchFolders()
                     .map(this.mapByFolderFollowingSymlink)
                     .filter(this.filterByNonEmptyString),
-                ],
+            ],
             resolver: {
                 ...(this.defaultConfig().resolver || {}),
                 resolveRequest: this.customResolver(),
@@ -349,8 +350,11 @@ class MetroConfigHelper {
         const moduleName = context.moduleName;
 
         const packageFilter = (pkg: any) => {
-            if (typeof pkg["react-native"] === 'string') {
-                pkg.main = pkg["react-native"];
+            for (const mainField of context.metro.mainFields || []) {
+                if (typeof pkg[mainField] === 'string') {
+                    pkg.main = pkg[mainField];
+                    break;
+                }
             }
             return pkg;
         };
@@ -453,8 +457,8 @@ class MetroConfigHelper {
         let filePaths: string[] = [];
         for (const baseExt of baseExtensions) {
             filePaths = filePaths.concat([
-                `${baseExt}`,
                 `${context.platform}.${baseExt}`,
+                `${baseExt}`,
             ]);
         }
         return filePaths;
@@ -552,8 +556,10 @@ export function findYarnMonorepo(
     while (true) {
         helper.logger().debug(`Searching for yarn monorepo at '${monorepoRoot}'...`);
         const packageJsonFilename = path.resolve(monorepoRoot, "package.json");
+        const yarnPackageJson = tryParseJsonFile(packageJsonFilename);
+        const yarnWorkspaces = yarnPackageJson ? yarnPackageJson.workspaces : {};
 
-        if (fs.existsSync(packageJsonFilename)) {
+        if (yarnWorkspaces && 'packages' in yarnWorkspaces) {
             if (yarnInPath) {
                 let workspaceInfoJson: string | undefined;
 
