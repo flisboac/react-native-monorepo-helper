@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.5"></a>
+## [0.2.5](https://github.com/flisboac/react-native-monorepo-helper/compare/v0.2.4...v0.2.5) (2019-02-20)
+
+
+### Bug Fixes
+
+* use metro's mainFields, resolve platform-specific files first, improve yarn monorepo search ([#5](https://github.com/flisboac/react-native-monorepo-helper/issues/5)) ([b512a13](https://github.com/flisboac/react-native-monorepo-helper/commit/b512a13))
+
+
+
 <a name="0.2.4"></a>
 ## [0.2.4](https://github.com/flisboac/react-native-monorepo-helper/compare/v0.2.3...v0.2.4) (2019-02-10)
 
