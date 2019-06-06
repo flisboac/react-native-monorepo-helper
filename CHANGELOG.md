@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file. See [standa
 <a name="0.2.6"></a>
 ## [0.2.6](https://github.com/flisboac/react-native-monorepo-helper/compare/v0.2.5...v0.2.6) (2019-06-06)
 
+### Security Fixes
+
+* bump handlebars from 4.0.11 to 4.1.2 [PR #7](https://github.com/flisboac/react-native-monorepo-helper/pull/7)
+* bump js-yaml from 3.12.0 to 3.13.1 [PR #2](https://github.com/flisboac/react-native-monorepo-helper/pull/6)
 
 
 <a name="0.2.5"></a>
