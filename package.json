@@ -1,6 +1,6 @@
 {
   "name": "react-native-monorepo-helper",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "A helper library that makes React Native development in monorepo projects easier.",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
